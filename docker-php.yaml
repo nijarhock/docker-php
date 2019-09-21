@@ -1,0 +1,16 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: docker-php
+    spec:
+      containers:
+        - name: docker-php
+          image: gcr.io/testing-purpose-251911/docker-php:v1
+          ports:
+            - containerPort: 8080
