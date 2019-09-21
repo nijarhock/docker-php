@@ -1,5 +1,6 @@
 FROM php:7.0-apache
 
-RUN apt-get update
+RUN apt-get update && \
+    apt-get clean
 
-ADD index.php /var/www/html/index.html
+COPY myapp /var/www/html/
